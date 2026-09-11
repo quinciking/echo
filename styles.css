@@ -403,3 +403,8 @@ footer button:hover{background:var(--green);color:var(--mint)}
 
 /* curtain: skip the animation when reopening the page mid-session */
 #stage.instant, #stage.instant .panel, #stage.instant .valance, #stage.instant .stage-copy, #stage.instant .rope-corner{transition:none!important}
+
+/* curtain: when closing, let the panels shut before the headline and rope fade back in */
+#stage:not(.open) .stage-copy{transition:opacity .6s ease 1.9s}
+#stage:not(.open) .rope-corner{transition-delay:0s}
+#stage.instant .stage-copy{transition:none!important}
