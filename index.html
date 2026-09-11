@@ -15,6 +15,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="stage" aria-label="Curtain">
+  <div class="spot"></div>
+  <div class="valance"></div>
+  <div class="panel l"></div>
+  <div class="panel r"></div>
+  <div class="stage-copy">
+    <div>
+      <div class="presenters">
+        <div class="lockup"><img src="logo_echo.png" alt="echo"><span class="x">×</span><img src="logo_duke.png" alt="Duke Cinematic Arts"></div>
+      </div>
+      <div class="eyebrow">September 17 &amp; 18 · Durham, NC</div>
+      <h1>Step inside the <em>I LOVE BOOSTERS</em> Universe</h1>
+      <div class="rope-wrap">
+        <button class="rope" id="rope" type="button" aria-label="Pull the rope to open the curtain"><span class="cord"></span><span class="knot"></span><span class="tassel"></span></button>
+        <span class="rope-hint">Pull the rope</span>
+      </div>
+    </div>
+  </div>
+  <button class="rope rope-corner" id="rope-close" type="button" aria-label="Close the curtain"><span class="cord"></span><span class="knot"></span><span class="tassel"></span></button>
+</div>
+
 <header class="bar">
   <div class="wrap">
     <img src="logo_echo.png" alt="echo">
@@ -178,6 +199,27 @@
     <span>echo · 404 Hunt St, Suite 500, Durham, NC · echo-nc.org</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'),rope=document.getElementById('rope'),closer=document.getElementById('rope-close');
+  if(!stage||!rope)return;
+  var KEY='curtainOpened',PULL=140,THRESH=60;
+  function lock(on){document.body.style.overflow=on?'hidden':'';}
+  function open(){stage.classList.add('open');lock(false);try{sessionStorage.setItem(KEY,'1');}catch(e){}}
+  function close(){stage.classList.remove('open');lock(true);rope.style.transform='';try{sessionStorage.removeItem(KEY);}catch(e){}}
+  var seen=false;try{seen=sessionStorage.getItem(KEY)==='1';}catch(e){}
+  if(seen){stage.classList.add('instant','open');requestAnimationFrame(function(){requestAnimationFrame(function(){stage.classList.remove('instant');});});}
+  else lock(true);
+  var startY=null,dy=0,dragging=false;
+  rope.addEventListener('pointerdown',function(e){startY=e.clientY;dy=0;dragging=false;rope.classList.add('pulling');rope.setPointerCapture(e.pointerId);});
+  rope.addEventListener('pointermove',function(e){if(startY===null)return;dy=Math.max(0,Math.min(PULL,e.clientY-startY));if(dy>6)dragging=true;rope.style.transform='translateY('+dy+'px)';});
+  function release(){if(startY===null)return;rope.classList.remove('pulling');var pulled=dy;startY=null;rope.style.transform='';if(pulled>=THRESH||!dragging)open();}
+  rope.addEventListener('pointerup',release);rope.addEventListener('pointercancel',release);
+  rope.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  if(closer)closer.addEventListener('click',close);
+})();
+</script>
 
 <script>
 (function(){

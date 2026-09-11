@@ -400,3 +400,6 @@ footer button:hover{background:var(--green);color:var(--mint)}
   .rope-hint{animation:none}
   .spot,.marquee::before,.valance::after{animation:none}
 }
+
+/* curtain: skip the animation when reopening the page mid-session */
+#stage.instant, #stage.instant .panel, #stage.instant .valance, #stage.instant .stage-copy, #stage.instant .rope-corner{transition:none!important}
