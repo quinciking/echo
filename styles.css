@@ -408,3 +408,17 @@ footer button:hover{background:var(--green);color:var(--mint)}
 #stage:not(.open) .stage-copy{transition:opacity .6s ease 1.9s}
 #stage:not(.open) .rope-corner{transition-delay:0s}
 #stage.instant .stage-copy{transition:none!important}
+
+/* brunch vendors */
+.vendors{margin-top:2.5rem;border-top:2px solid var(--green);padding-top:2.2rem}
+.vendors .eyebrow{color:var(--pink);margin-bottom:.6rem;text-align:center}
+.vendors h3{text-align:center;font-family:var(--display);font-weight:900;font-size:32px;line-height:1.2;color:var(--green);margin:0 auto 1.6rem;max-width:30ch}
+.vendor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+.vendor{background:var(--green);color:var(--white);padding:1.4rem 1.6rem;border-left:4px solid var(--sea);display:grid;gap:.3rem;align-content:start}
+.vendor:nth-child(even){border-left-color:var(--pink)}
+.vendor img{height:44px;width:auto;background:var(--white);padding:.4rem .7rem;border-radius:8px;justify-self:start;margin-bottom:.3rem}
+.vendor b{font-family:var(--display);font-weight:900;font-size:1.25rem;line-height:1.15}
+.vendor small{font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sea)}
+.vendor:nth-child(even) small{color:var(--pink)}
+.vendor p{margin:.4rem 0 0;color:var(--mint);font-size:.95rem;line-height:1.5}
+@media (max-width:820px){.vendor-grid{grid-template-columns:1fr}}
