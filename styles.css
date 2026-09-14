@@ -431,3 +431,7 @@ footer button:hover{background:var(--green);color:var(--mint)}
 .ticket .more-btn:hover{transform:translateY(3px);box-shadow:0 5px 0 var(--pink-deep)}
 .brunch-more[hidden]{display:none!important}
 .brunch-more{scroll-margin-top:1rem}
+
+/* three-day update */
+.hero-credit{margin:1.1rem 0 0;max-width:60ch;font-size:.92rem;line-height:1.5;color:var(--mint);text-shadow:0 2px 12px rgba(0,0,0,.5);border-left:3px solid var(--sea);padding-left:.9rem}
+.format.tkt .stub-day.range{font-size:1.7rem;letter-spacing:-.02em;margin-top:.15rem}
