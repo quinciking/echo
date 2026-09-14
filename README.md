@@ -11,5 +11,5 @@ python3 -m http.server 8000
 
 ## Hosting on GitHub Pages
 
-Settings → Pages → Source: **Deploy from a branch** → `main` / `/ (root)`.
-The site will publish at https://quinciking.github.io/echo/
+Custom domain bootsriley.echo-nc.org (CNAME file in repo; Cloudflare CNAME → quinciking.github.io, DNS only).
+The site will publish at https://bootsriley.echo-nc.org/
