@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&display=swap">
-  <link rel="stylesheet" href="styles.css?v=e4cf3168">
+  <link rel="stylesheet" href="styles.css?v=242fa9f0">
 </head>
 <body>
 <div id="stage" aria-label="Curtain">
@@ -169,6 +169,7 @@
           <dt>Who</dt><dd>Local artists, filmmakers, young creatives, students and community voices. All ages.</dd>
           <dt>With</dt><dd>Presented by Duke Cinematic Arts in partnership with echo-Durham</dd>
         </dl>
+        <button class="cta more-btn" id="brunch-more-btn" type="button" aria-expanded="false" aria-controls="brunch-more">Learn more <span class="k">UNSTUCK + VENDORS</span></button>
       </div>
       <div class="stub">
         <span class="mono">Sept</span>
@@ -176,6 +177,7 @@
         <span class="mono">Durham · Members</span>
       </div>
     </div>
+    <div id="brunch-more" class="brunch-more" hidden>
     <div class="unstuck">
       <div class="unstuck-head">
         <div class="eyebrow">What's an Unstuck Workshop?</div>
@@ -192,6 +194,7 @@
         <div class="vendor"><img src="vendors/nosh.png" alt="NOSH"><b>NOSH</b><small>Founder, Wendy Woods</small><p>NOSH is a Durham restaurant serving eclectic, southern-inspired breakfast and lunch near Duke University, founded by Durham native Wendy Woods. Known for its brunch favorites and community presence, NOSH also offers catering for events across the city.</p></div>
         <div class="vendor"><img src="vendors/sugar-symphony.jpg" alt="Sugar Symphony"><b>Sugar Symphony</b><small>Founder, Ariana H.</small><p>Sugar Symphony is a small creative bakery founded by Ariana H., specializing in custom cakes, cupcakes, cookies and seasonal desserts. Every treat is made with care, bringing people together to make any occasion a little sweeter.</p></div>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -245,5 +248,18 @@
 })();
 </script>
 
+
+<script>
+(function(){
+  var btn=document.getElementById('brunch-more-btn'),box=document.getElementById('brunch-more');
+  if(!btn||!box)return;
+  btn.addEventListener('click',function(){
+    var open=box.hidden; box.hidden=!open;
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.firstChild.nodeValue=open?'Show less ':'Learn more ';
+    if(open)box.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+})();
+</script>
 </body>
 </html>

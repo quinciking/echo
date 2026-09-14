@@ -425,3 +425,9 @@ footer button:hover{background:var(--green);color:var(--mint)}
 
 /* long showtime chips may wrap on phones */
 @media (max-width:820px){.showtime span{white-space:normal}}
+
+/* details card: learn-more toggle */
+.ticket .more-btn{border:0;cursor:pointer;font:900 1rem var(--body);margin-top:1.6rem}
+.ticket .more-btn:hover{transform:translateY(3px);box-shadow:0 5px 0 var(--pink-deep)}
+.brunch-more[hidden]{display:none!important}
+.brunch-more{scroll-margin-top:1rem}
