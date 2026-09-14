@@ -435,3 +435,5 @@ footer button:hover{background:var(--green);color:var(--mint)}
 /* three-day update */
 .hero-credit{margin:1.1rem 0 0;max-width:60ch;font-size:.92rem;line-height:1.5;color:var(--mint);text-shadow:0 2px 12px rgba(0,0,0,.5);border-left:3px solid var(--sea);padding-left:.9rem}
 .format.tkt .stub-day.range{font-size:1.7rem;letter-spacing:-.02em;margin-top:.15rem}
+
+.format.tkt .meta strong{color:var(--white)}
